@@ -1,4 +1,4 @@
-import image from "/public/headshot.jpg"
+
 import { motion } from "framer-motion"
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
         transition={{duration: 0.8, delay: 0.2}}
         
         >
-          <img src={image} alt="" className="w-[300px] cursor-pointer rounded-full shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-15 hover:shadow-2xl hover:shadow-indigo-600 md:w-[350px]" />
+          <img src="/headshot.jpg" alt="" className="w-[300px] cursor-pointer rounded-full shadow-xl shadow-indigo-900 transition-all duration-300 hover:-translate-y-5 hover:scale-15 hover:shadow-2xl hover:shadow-indigo-600 md:w-[350px]" />
         </motion.div>
         <motion.div 
         initial={{y: 50, opacity: 0}}
