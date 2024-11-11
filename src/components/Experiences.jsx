@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import image1 from "/headshot.jpg";
 import gdit from "/gdit.png";
-import asts from "/asts.png"
+import asts from "/asts.png";
 import golfpass from "/golfpass.png";
 import ra from "/ra.jpg";
-import tommy from "/tommy.png"
+import tommy from "/tommy.png";
 import aap from "/aap.jpg";
+import johnson from "/johnson.jpg";
+import ScrollReveal from './ScrollReveal';
+
 const experienceData = [
   {
     image: golfpass,
@@ -21,11 +23,11 @@ const experienceData = [
     description: "Applied agile methodologies in an R&D project to build an onboarding platform for new hires in the GDIT subsidiary. Decreased administrative overhead by 75% by automating new hire form management with a SharePoint, PowerApps, and Power Automate hybrid system, eliminating manual processing and improving form tracking.",
     technologies: ["Sharepoint", "PowerApps", "Power Automate"],
   },
-  
-]
+];
+
 const additionalExperienceData = [
   {
-    image: ra,
+    image: johnson,
     title: "University of Maryland - Johnson-Whittle Hall Resident Assistant",
     date: "(Aug 2024 - Present)",
     description: "Supervise 84 Johnson-Whittle Hall residents while building community and providing mentorship on a personal/professional level.",
@@ -38,7 +40,6 @@ const additionalExperienceData = [
     description: "Led weekly in-person tutoring sessions for 28 first-generation college students taking Intro to Communications, delivering a range of teaching and assessment activities.",
     skills: ["Lesson Planning", "University Teaching", "Leadership", "Communication"],
   },
-  
   {
     image: asts,
     title: "University of Maryland - Academic Success & Tutoring Services Computer Science Tutor",
@@ -53,30 +54,11 @@ const additionalExperienceData = [
     description: "Tailored training to 8 new hires, improving operational efficiency and adherence to company standards. Managed weekly processing of 200+ shipment boxes, implementing floor arrangements to optimize sales.",
     skills: ["Teamwork", "Cashiering", "Retail Sales", "Customer Service", "Leadership"],
   },
-  
-]
-
-const ScrollReveal = ({ children }) => {
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-
-    >
-
-      {children}
-    </motion.div>
-  )
-}
-
+];
 
 const ExperienceCard = ({ experience }) => {
   return (
     <ScrollReveal>
-
       <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
         <img src={experience.image} alt="" className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]" />
         <div className="flex flex-col gap-5">
@@ -97,13 +79,12 @@ const ExperienceCard = ({ experience }) => {
         </div>
       </div>
     </ScrollReveal>
+  );
+};
 
-  )
-}
 const AdditionalExperienceCard = ({ experience }) => {
   return (
     <ScrollReveal>
-
       <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
         <img src={experience.image} alt="" className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]" />
         <div className="flex flex-col gap-5">
@@ -124,45 +105,41 @@ const AdditionalExperienceCard = ({ experience }) => {
         </div>
       </div>
     </ScrollReveal>
+  );
+};
 
-  )
-}
 const Experiences = () => {
   return (
     <div id="experiences" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24">
       <ScrollReveal>
-        <h1 className="text-4xl font-light text-white md:text-6xl">
+        <h1 className="text-4xl font-light text-white md:text-6xl text-center">
           Relevant Experience
         </h1>
-
       </ScrollReveal>
 
       <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
         {
           experienceData.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
-
-
           ))
         }
       </div>
       <ScrollReveal>
-        <h1 className="text-4xl font-light text-white md:text-6xl">
+        <h1 className="text-4xl font-light text-white md:text-6xl text-center">
           Additional Experience
         </h1>
-      
       </ScrollReveal>
       <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
         {
           additionalExperienceData.map((experience, index) => (
             <AdditionalExperienceCard key={index} experience={experience} />
-
-
           ))
         }
       </div>
-    </div>
-  )
-}
+      <div className="md:mb-0 sm:mb-4" />
 
-export default Experiences
+    </div>
+  );
+};
+
+export default Experiences;
