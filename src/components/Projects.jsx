@@ -5,6 +5,7 @@ import project2 from "/project2.png";
 import portfolio from "/portfolio.png";
 import project4 from "/project4.png";
 import project5 from "/project5.png";
+import ScrollReveal from "./ScrollReveal";
 const projectsData = [
   {
     image: project1,
@@ -42,22 +43,6 @@ const projectsData = [
     link: "https://github.com/ctgchris/house-prediction",
   },
 ]
-
-const ScrollReveal = ({ children }) => {
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-
-    >
-
-      {children}
-    </motion.div>
-  )
-}
 
 
 const ProjectCard = ({ project }) => {
@@ -110,6 +95,7 @@ const Projects = () => {
           ))
         }
       </div>
+      <div className="md:mb-0 sm:mb-4" />
 
 
     </div>
