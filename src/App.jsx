@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Experiences from './components/Experiences';
 import Affiliations from './components/Affiliations';
+import Coursework from './components/Coursework';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <Tech/>
+        <Coursework />
         <Experiences />
         <Projects/>
         <Affiliations/>
