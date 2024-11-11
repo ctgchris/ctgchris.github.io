@@ -3,6 +3,8 @@ import Hero from './components/Hero';
 import Tech from './components/Tech';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Experiences from './components/Experiences';
+import Affiliations from './components/Affiliations';
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
         <Navbar/>
         <Hero/>
         <Tech/>
+        <Experiences />
         <Projects/>
+        <Affiliations/>
         <Contact/>
       </main>
 
